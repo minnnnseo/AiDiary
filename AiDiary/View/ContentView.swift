@@ -12,12 +12,12 @@ struct ContentView: View {
 
     var body: some View {
         Group {
-            if isLoadingComplete { // 로딩이 완료되면 CalendarView를 표시합니다.
-                CalendarView()
-            } else { // 로딩이 완료되지 않았으면 LoadingView를 표시합니다.
+            if isLoadingComplete { // 로딩이 완료되면 CalendarView를 표시
+                HomeView()
+            } else { // 로딩이 완료되지 않았으면 LoadingView를 표시
                 LoadingView()
                     .onAppear {
-                        // 로딩이 완료되었음을 표시하는 데모 용도로 2초 후에 isLoadingComplete 상태를 true로 변경합니다.
+                        // 로딩이 완료되었음을 표시하는 데모 용도로 3초 후에 isLoadingComplete 상태를 true로 변경
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             isLoadingComplete = true
                         }

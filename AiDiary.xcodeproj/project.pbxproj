@@ -12,6 +12,9 @@
 		4E15935D2B67E0B00016E41A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15935C2B67E0B00016E41A /* Color.swift */; };
 		4E15935F2B68C8D80016E41A /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15935E2B68C8D80016E41A /* WriteView.swift */; };
 		4E1593612B69D7CB0016E41A /* ImageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1593602B69D7CB0016E41A /* ImageLoadingView.swift */; };
+		4EC037E12B6B2E4E006C243B /* ImageGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC037E02B6B2E4E006C243B /* ImageGenerationView.swift */; };
+		4EC037E32B6B5A89006C243B /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC037E22B6B5A89006C243B /* DiaryView.swift */; };
+		4EC037E72B6B6EA0006C243B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC037E62B6B6EA0006C243B /* HomeView.swift */; };
 		4EC1D4192B59449B006181C0 /* AiDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1D4182B59449B006181C0 /* AiDiaryApp.swift */; };
 		4EC1D41B2B59449B006181C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC1D41A2B59449B006181C0 /* ContentView.swift */; };
 		4EC1D41D2B5944AA006181C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC1D41C2B5944AA006181C0 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		4E15935E2B68C8D80016E41A /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		4E1593602B69D7CB0016E41A /* ImageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingView.swift; sourceTree = "<group>"; };
 		4E1593622B69ECF40016E41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4EC037E02B6B2E4E006C243B /* ImageGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationView.swift; sourceTree = "<group>"; };
+		4EC037E22B6B5A89006C243B /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		4EC037E62B6B6EA0006C243B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4EC1D4152B59449B006181C0 /* AiDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC1D4182B59449B006181C0 /* AiDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiDiaryApp.swift; sourceTree = "<group>"; };
 		4EC1D41A2B59449B006181C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +49,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EC037E42B6B6E5B006C243B /* HexColor */ = {
+			isa = PBXGroup;
+			children = (
+				4E15935C2B67E0B00016E41A /* Color.swift */,
+			);
+			path = HexColor;
+			sourceTree = "<group>";
+		};
+		4EC037E52B6B6E76006C243B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4EC1D41A2B59449B006181C0 /* ContentView.swift */,
+				4EC037E62B6B6EA0006C243B /* HomeView.swift */,
+				4E1593582B67CDC00016E41A /* LoadingView.swift */,
+				4E15935A2B67D1900016E41A /* CalendarView.swift */,
+				4E15935E2B68C8D80016E41A /* WriteView.swift */,
+				4E1593602B69D7CB0016E41A /* ImageLoadingView.swift */,
+				4EC037E02B6B2E4E006C243B /* ImageGenerationView.swift */,
+				4EC037E22B6B5A89006C243B /* DiaryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4EC1D40C2B59449B006181C0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,12 +93,8 @@
 			children = (
 				4E1593622B69ECF40016E41A /* Info.plist */,
 				4EC1D4182B59449B006181C0 /* AiDiaryApp.swift */,
-				4EC1D41A2B59449B006181C0 /* ContentView.swift */,
-				4E1593582B67CDC00016E41A /* LoadingView.swift */,
-				4E15935A2B67D1900016E41A /* CalendarView.swift */,
-				4E15935C2B67E0B00016E41A /* Color.swift */,
-				4E15935E2B68C8D80016E41A /* WriteView.swift */,
-				4E1593602B69D7CB0016E41A /* ImageLoadingView.swift */,
+				4EC037E52B6B6E76006C243B /* View */,
+				4EC037E42B6B6E5B006C243B /* HexColor */,
 				4EC1D41C2B5944AA006181C0 /* Assets.xcassets */,
 				4EC1D41E2B5944AA006181C0 /* Preview Content */,
 			);
@@ -157,9 +182,12 @@
 				4EC1D41B2B59449B006181C0 /* ContentView.swift in Sources */,
 				4E15935D2B67E0B00016E41A /* Color.swift in Sources */,
 				4E15935F2B68C8D80016E41A /* WriteView.swift in Sources */,
+				4EC037E72B6B6EA0006C243B /* HomeView.swift in Sources */,
 				4EC1D4192B59449B006181C0 /* AiDiaryApp.swift in Sources */,
 				4E15935B2B67D1900016E41A /* CalendarView.swift in Sources */,
+				4EC037E32B6B5A89006C243B /* DiaryView.swift in Sources */,
 				4E1593612B69D7CB0016E41A /* ImageLoadingView.swift in Sources */,
+				4EC037E12B6B2E4E006C243B /* ImageGenerationView.swift in Sources */,
 				4E1593592B67CDC00016E41A /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +322,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AiDiary/Preview Content\"";
+				DEVELOPMENT_TEAM = 9NNN6CDV7H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AiDiary/Info.plist;
@@ -322,6 +351,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AiDiary/Preview Content\"";
+				DEVELOPMENT_TEAM = 9NNN6CDV7H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AiDiary/Info.plist;

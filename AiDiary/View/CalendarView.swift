@@ -16,17 +16,19 @@ struct CalendarView: View {
                 DatePicker("", selection: $selectedDate, displayedComponents: .date)
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .accentColor(.red)
-                    .padding()
+                    .frame(width: 250, height: 300)
+                    .padding([.leading, .bottom, .trailing])
                     .background(Color.white)
-                    .cornerRadius(10)
+                    .cornerRadius(20)
                     .padding()
                     .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
                 //                    .padding(.top)
                 HStack {
                     Text(appliedDate == nil ? "" : "Selected Date: \(appliedDate!, formatter: dateFormatter)")
+                        .font(.system(size: 12))
                         .foregroundColor(.white)
                         .italic()
-                        .padding(.leading, 10.0)
+                        .padding(.leading, 30.0)
                     Spacer()
                     
                     Button(action: {
@@ -39,9 +41,11 @@ struct CalendarView: View {
                             .padding(.vertical, 10) // 위아래 패딩 적용
                             .background(Color(hex: "FFFFF9"))
                             .clipShape(Capsule())
-                            .frame(width: 80) // 버튼의 너비를 80으로 지정
+                            .frame(width: 86.0) // 버튼의 너비를 80으로 지정
                             .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
                     }
+                    .padding([.top, .bottom, .trailing],3)
+                    .padding(.trailing)
                 }
                 .padding(.horizontal)
                 
@@ -58,12 +62,13 @@ struct CalendarView: View {
                             Spacer()
                         }
                     }
-                    .frame(width: 350, height: 300)
+                    .frame(width: 270, height: 280)
                     .background(Color(hex: "FFFFF9"))
-                    .cornerRadius(15)
-                    .padding(10)
-                    .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 5)
-                    Spacer()
+                    .cornerRadius(20)
+                    //.padding(20)
+                    .padding(.bottom,20)
+                    .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
+                    //Spacer()
                 }
             }
         }

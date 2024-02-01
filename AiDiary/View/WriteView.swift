@@ -26,31 +26,37 @@ struct WriteView: View {
             
             VStack(alignment: .leading) {
                 Text("Selected Date: \(selectedDate, formatter: dateFormatter)")
+                    .font(.system(size: 13))
                     .foregroundColor(.white)
-                    .padding(.top,20)
-                    .padding()
+                    .italic()
+                    .padding(.top,35)
+                    .padding(.leading,20)
+                    .padding([.top, .leading, .trailing])
                 
                 ZStack(alignment: .bottomTrailing) {
-                    TextEditor(text: $text)
-                        .foregroundColor(.black)
+                    Divider()
+                    TextEditor(text:$text)
                         .background(Color(hex: "FFFFF9"))
-                        .cornerRadius(10)
-                        .padding([.leading, .bottom, .trailing], 20.0)
+                        .cornerRadius(30)
+                        .padding([.leading, .bottom, .trailing], 33.0)
                         .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
+                        .padding(.top,30)
+                        .lineSpacing(3) //줄 간격
+                        .multilineTextAlignment(.leading)
+                        
                     
                     Button(action: {
                         isImageLoadingViewPresented = true
-                        //  saveImage() // 버튼을 눌렀을 때 이미지 저장
                     }) {
                         Image(systemName: "checkmark.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width: 50, height: 50)
                             .foregroundColor(Color(hex: "A70808"))
                             .padding()
                     }
-                    .padding(.bottom, 13)
-                    .padding(.horizontal, 13)
+                    .padding(.bottom, 40)
+                    .padding(.horizontal, 40)
                 }
             }
         }

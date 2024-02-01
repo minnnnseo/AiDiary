@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ImageLoadingView: View {
     @State private var transitionView = false
-
+    @State private var isImageGenerated = false
+    
     var body: some View {
         ZStack {
             Color("A70808")
@@ -21,22 +22,22 @@ struct ImageLoadingView: View {
                     Image(systemName: "envelope.open.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 300)
-                        .foregroundColor(Color.white)
-//                        .transition(.asymmetric(insertion: .move(edge: .top),
-//                                                removal: .move(edge: .leading)))
+                        .frame(width:180, height: 300)
+                        .foregroundColor(Color(hex: "FFFFF9"))
+                    //                        .transition(.asymmetric(insertion: .move(edge: .top),
+                    //                                                removal: .move(edge: .leading)))
                         .frame(height: UIScreen.main.bounds.height * 0.5)
                         .transition(.asymmetric(insertion: AnyTransition.move(edge: .top),
                                                 removal: AnyTransition.opacity.animation(.easeIn))
-                                    )
+                        )
                         .animation(.easeIn)
                         .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
                 }
-
+                
                 ZStack{
                     RoundedRectangle(cornerRadius: 10)
                         .padding(.bottom, 20)
-                        .frame(width: 270, height: 80)
+                        .frame(width: 250, height: 80)
                         .foregroundColor(Color(hex: "FFFFF9"))
                         .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
                         .overlay(
@@ -55,17 +56,27 @@ struct ImageLoadingView: View {
                         .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 5)
                 }
             }
-                
+            
+        }
+        .onAppear {
+            withAnimation {
+                transitionView = true
             }
-            .onAppear {
+            
+            // 이미지 생성이 완료되면 isImageGenerated를 true로 업데이트
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation {
-                    transitionView = true
+                    isImageGenerated = true
                 }
             }
             
-
+            
         }
+        .fullScreenCover(isPresented: $isImageGenerated, content: {
+            ImageGenerationView()
+        })
     }
+}
 
 struct ImageLoadingView_Previews: PreviewProvider {
     static var previews: some View {
